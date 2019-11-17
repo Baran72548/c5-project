@@ -97,7 +97,8 @@
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:layout_marginBottom="32dp"
-        android:background="@drawable/button_true"
+        android:background="@color/colorPrimaryDark"
+        android:onClick="onTrueClicked"
         android:text="@string/true_button"
         android:textColor="@android:color/white"
         android:textSize="18sp"
@@ -105,8 +106,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button_false"
-        android:onClick="onTrueClicked" />
+        app:layout_constraintStart_toEndOf="@+id/button_false" />
 
     <Button
         android:id="@+id/button_false"
@@ -117,7 +117,7 @@
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:layout_marginBottom="32dp"
-        android:background="@drawable/button_false"
+        android:background="@drawable/button_purple"
         android:onClick="onFalseClicked"
         android:text="@string/false_button"
         android:textColor="@android:color/white"
