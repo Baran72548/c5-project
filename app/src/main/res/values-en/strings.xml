@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Guess The Answer</string>
+    <string name="false_button">False</string>
+    <string name="true_button">True</string>
+    <string name="back_button">Return</string>
+    <string name="share_button">Share question</string>
+    <string name="share_title_hint">Enter title</string>
+    <string name="change_question_text">Change the question</string>
+    <string name="change_lang_text">Change Language</string>
+    <string name="question">Question</string>
+    <string name="the_right_answer_is">The right answer is</string>
+    <string name="share_the_question_with_friends">Share the question with friends</string>
+
+    <string-array name="questions">
+        <item>The official currency of Kuwait is the Kuwaiti riyal?</item>
+        <item>Toubkal is the highest peak in the Arab world?</item>
+        <item>Algeria is the largest Arab country in terms of area?</item>
+        <item>Casablanca is the capital of Morocco?</item>
+    </string-array>
+
+    <string-array name="answers_details">
+        <item>The official currency of Kuwait is the Kuwaiti riyal</item>
+        <item>Topkale is the highest mountain peak in the Arab world and located in Morocco</item>
+        <item>Algeria is the largest Arab country in terms of area</item>
+        <item>Rabat is the capital of Morocco</item>
+    </string-array>
+</resources>
