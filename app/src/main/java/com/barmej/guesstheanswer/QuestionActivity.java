@@ -37,8 +37,8 @@ public class QuestionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        SharedPreferences sharedPreferences = getSharedPreferences("app_pref", MODE_PRIVATE);
-        String appLang = sharedPreferences.getString("app_lang", "");
+        SharedPreferences sharedPreferences = getSharedPreferences(Constants.APP_PREF, MODE_PRIVATE);
+        String appLang = sharedPreferences.getString(Constants.APP_LANG, "");
         //Use device's default language if there is no saved language.
         if (!appLang.equals(""))
             LocaleHelper.setLocale(this, appLang);
@@ -87,7 +87,7 @@ public class QuestionActivity extends AppCompatActivity {
                                 language = "fr";
                                 break;
                         }
-                        //Call savelanguage() method in case the user exit the application.
+                        //Call saveLanguage() method in case the user exit the application.
                         saveLanguage(language);
                         LocaleHelper.setLocale(QuestionActivity.this, language);
                         //Use Intent to be sure selected language is the main language of app.
@@ -104,9 +104,9 @@ public class QuestionActivity extends AppCompatActivity {
 
     //This method will be called after choosing the language to save it as the chosen language of user.
     private void saveLanguage(String lang){
-        SharedPreferences sharedPreferences = getSharedPreferences("app_pref", MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getSharedPreferences(Constants.APP_PREF, MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString("app_lang", lang);
+        editor.putString(Constants.APP_LANG, lang);
         editor.apply();
     }
 
@@ -130,7 +130,7 @@ public class QuestionActivity extends AppCompatActivity {
         } else {
             Toast.makeText(this, "إجابة خاطئة", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(QuestionActivity.this, AnswerActivity.class);
-            intent.putExtra("question_answer", mCurrentQuestionDetail);
+            intent.putExtra(Constants.QUESTION_ANSWER, mCurrentQuestionDetail);
             startActivity(intent);
         }
     }
@@ -142,14 +142,14 @@ public class QuestionActivity extends AppCompatActivity {
         } else {
             Toast.makeText(this, "إجابة خاطئة", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(QuestionActivity.this, AnswerActivity.class);
-            intent.putExtra("question_answer", mCurrentQuestionDetail);
+            intent.putExtra(Constants.QUESTION_ANSWER, mCurrentQuestionDetail);
             startActivity(intent);
         }
     }
 
     public void onShareQuestionClicked(View view) {
         Intent intent = new Intent(QuestionActivity.this, ShareActivity.class);
-        intent.putExtra("question text extra", mCurrentQuestion);
+        intent.putExtra(Constants.QUESTION_TEXT_EXTRA, mCurrentQuestion);
         startActivity(intent);
     }
 }
